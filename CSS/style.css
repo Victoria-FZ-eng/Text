@@ -9,7 +9,7 @@
   transform: scale(1.2);
 }
 
-#bookingForm{
+#bookingForm {
   border: 1px;
   width:30%;
   font-family: 'Pacifico', cursive;
@@ -43,6 +43,18 @@
   margin-left: 3.6rem;;
 }
 
+#confirmation{
+  border: 1px;
+  width:30%;
+  font-family: 'Pacifico', cursive;
+  z-index: 1;
+  text-align: center;
+  background-color: cornsilk;
+  position: absolute;
+  top:7rem;
+  left:35%;
+
+}
 
 
 

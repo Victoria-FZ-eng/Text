@@ -10,7 +10,11 @@ let allDesImg = ['img/ajlonRelax.jpg', 'img/ajlounCastle.jpg', 'img/ammanCitadle
 
 
 
-
+let persons;
+let tguide;
+let breakfast;
+let activity;
+let site;
 
 let baseprice=0;
 let totalprice=0;
@@ -21,7 +25,7 @@ let Relaxingbaseprice=15;
 let Exploringbaseprice=10;
 document.getElementById('siteChosen');
 const checkBox = document.getElementById('breakfast');
-const site=document.getElementById('siteChosen');
+site=document.getElementById('siteChosen');
 console.log(checkBox);
 const checkBox2 = document.getElementById('guide');
 console.log(checkBox2);
@@ -32,12 +36,12 @@ function getselect(event){
   event.preventDefault();
   console.log(event);
   const adv=event.target;
-  const persons=adv.persons.value;
-  const breakfast=adv.breakfast.checked;
-  const tguide=adv.guide.checked;
+  persons=adv.persons.value;
+  breakfast=adv.breakfast.checked;
+  tguide=adv.guide.checked;
   console.log(breakfast);
   console.log(tguide);
-  let activity=site.value;
+  activity=site.value;
   console.log(activity);
   switch(activity){
   case 'Valley Of The Moon /Rum':
@@ -157,14 +161,14 @@ for (let i=0 ; i<allDestination.length; i++){
   let h = document.createElement('h4');
   divcont.appendChild(h);
   h.textContent = allDestination[i];
-  let p = document.createElement('p');
-  divcont.appendChild(p);
-  p.textContent='Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, omnis iure libero quam nostrum ea dolorum nobis illo distinctio explicabo architecto asperiores ratione atque odio natus eveniet voluptatibus? Eum, rerum!';
+
   let now = document.createElement('button');
   now.setAttribute('id','book');
   divcont.appendChild(now);
   now.textContent='Book Now';
 }
+
+
 
 
 
@@ -192,10 +196,17 @@ function savtoLs(event){
 
   document.getElementById('bookingForm').style.display='none';
 
-  // document.getElementById('confirmation').style.display='block';
+  document.getElementById('confirmation').style.display='block';
 
-
-  return event;
+  let ok = document.getElementById('ok');
+  ok.addEventListener('click', back);
+  function back(event){
+    event.preventDefault();
+   // document.getElementById('book').addEventListener('click',booking);
+   document.getElementById('confirmation').style.display='none';
+   
+   }
+  
 }
 
 
@@ -203,24 +214,21 @@ function savtoLs(event){
 
 
 
-// let cardis = document.getElementById('cardsec');
-// cardis.style.display='none';
 
 
 
+document.getElementById('details').addEventListener('submit', parg);
 
-// document.getElementById('seeCard').addEventListener('submit', filter);
+function parg(event){
+  let conta = document.getElementsByClassName('container')[0];
+  let p = document.createElement('p');
+  conta.appendChild(p);
+  p.textContent=`Your are booking ${persons} tickets for a ${activity} trip to ${site} . Breakfast including : ${breakfast}. Tour guide including ${tguide}.      Price = ${totalprice}`;
+  return event;
+}
 
-// function filter(event){
-//   event.preventDefault();
-//   for (let i=0; i<allDestination.length ;i++){
-//     if ( document.getElementsByName('choose your adventure') === allDestination[i]){
-//       document.getElementsByClassName('vcard').style.display='block';
-//     }
-//   }
-//   console.log(document.getElementsByName('choose your adventure'));
-//   return event;
-// }
+
+
 
 
 
