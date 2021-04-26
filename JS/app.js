@@ -198,23 +198,23 @@ function savtoLs(event){
 
   document.getElementById('confirmation').style.display='block';
 
-  let ok = document.getElementById('ok');
-  ok.addEventListener('click', back);
-  function back(event){
-    event.preventDefault();
-   // document.getElementById('book').addEventListener('click',booking);
-   document.getElementById('confirmation').style.display='none';
-   
-   }
-  
+document.getElementById('bookingForm').style.display='none';
+document.getElementById('confirmation').style.display='block';
+let ok = document.getElementById('ok');
+ok.addEventListener('click', back);
+
+  return event;
 }
 
 
 
 
 
-
-
+function back(event){
+document.getElementById('book').addEventListener('click',booking);
+document.getElementById('confirmation').style.display='none';
+return event;
+}
 
 
 document.getElementById('details').addEventListener('submit', parg);

@@ -1,15 +1,15 @@
-#book{
+#book, #ok{
   height:2rem;
   width:5.5rem; 
   border-radius: 1rem;
   font-family: 'Pacifico', cursive;
   background-color: #ffcb91;
 }
-#book:hover{
+#book:hover , #ok:hover{
   transform: scale(1.2);
 }
 
-#bookingForm {
+#bookingForm  ,#confirmation{
   border: 1px;
   width:30%;
   font-family: 'Pacifico', cursive;
@@ -25,7 +25,7 @@
 
 }
 
-#bookingForm{
+#bookingForm , #confirmation{
   z-index: 1;
   text-align: center;
   background-color: cornsilk;
@@ -38,22 +38,12 @@
 #bookingForm input:invalid{
   border:1px red solid;
 }
+#confirmation input:invalid{
+  border:1px red solid;
+}
 
 #bookingForm #name{
   margin-left: 3.6rem;;
-}
-
-#confirmation{
-  border: 1px;
-  width:30%;
-  font-family: 'Pacifico', cursive;
-  z-index: 1;
-  text-align: center;
-  background-color: cornsilk;
-  position: absolute;
-  top:7rem;
-  left:35%;
-
 }
 
 
