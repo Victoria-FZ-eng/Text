@@ -1,0 +1,103 @@
+#book{
+  height:2rem;
+  width:5.5rem; 
+  border-radius: 1rem;
+  font-family: 'Pacifico', cursive;
+  background-color: #ffcb91;
+}
+#book:hover{
+  transform: scale(1.2);
+}
+
+#bookingForm{
+  border: 1px;
+  width:30%;
+  font-family: 'Pacifico', cursive;
+}
+
+#reserve, #ok{
+  margin: 0.5rem;
+  height:2rem;
+  width:4rem; 
+  border-radius: 1rem;
+  font-family: 'Pacifico', cursive;
+  background-color: #ffcb91;
+
+}
+
+#bookingForm{
+  z-index: 1;
+  text-align: center;
+  background-color: cornsilk;
+  position: absolute;
+  top:7rem;
+  left:35%;
+  
+}
+
+#bookingForm input:invalid{
+  border:1px red solid;
+}
+
+#bookingForm #name{
+  margin-left: 3.6rem;;
+}
+
+
+
+
+
+
+
+#cardsec{
+    box-sizing: border-box;
+    margin: 7rem;
+
+}
+#cardsec .vcard{
+    position: relative;
+    border-radius: 20px;
+    width: 40%;
+    margin: 5rem;}
+    #cardsec .vcard:hover{
+        width:80%;
+    }
+    
+.vcard img{
+    position: relative;
+    left: 25px;
+    top:25px;
+
+    height: 230px;
+    width: 370px;
+    margin-bottom:3rem;
+}
+.vcard {
+    border: beige;
+   
+    
+   
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+  }
+  
+  
+  .vcard:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  
+  
+  .container {
+    display: none;
+      border:black;
+      height: 300px;
+      width:40%;
+    text-align: center;
+      position: absolute;
+      right:5rem;
+      top :5%;
+  }
+.vcard:hover .container, .vcard.hover .container {
+    display:block;
+}
+  
