@@ -3,12 +3,61 @@
 <head>
     <title>JoWonders-project201</title>
     <link rel="stylesheet" href="CSS/stylebn.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/hstyle.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
 </head>
 <body>
-    <header>
-
+    <header class="header">
+      
+            <a href="" class="logo">JO Wonders</a>
+            <input class="menu-btn" type="checkbox" id="menu-btn" />
+            <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+            <ul class="menu">
+              <li><a href="#HOME">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#Distiation">Distiation</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
     </header>
-   <main>     
+   <main> 
+       
+    <div id=rating>
+        <h2>Rate If You Tried Our Services!!</h2>
+        <div class="container">
+            <div class="post">
+                <div class="text">Thanks for rating us!</div>
+                <div class="edit">RATE AGAIN</div>
+            </div>
+            <div class="star-widget">
+                <input type="radio" name="rate" id="rate-5">
+                <label for="rate-5" class="fas fa-star"></label>
+                <input type="radio" name="rate" id="rate-4">
+                <label for="rate-4" class="fas fa-star"></label>
+                <input type="radio" name="rate" id="rate-3">
+                <label for="rate-3" class="fas fa-star"></label>
+                <input type="radio" name="rate" id="rate-2">
+                <label for="rate-2" class="fas fa-star"></label>
+                <input type="radio" name="rate" id="rate-1">
+                <label for="rate-1" class="fas fa-star"></label>
+                <form action="#">
+                    <header></header>
+                    <div class="textarea">
+                        <textarea cols="30" placeholder="Describe your experience."></textarea>
+                    </div>
+                    <div class="btn">
+                        <button id="Results" type="submit">Rate</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <h2>Choose Your Next Trip</h2>
+
       <form id="bookingForm" style="display:none;">
            <fieldset>
             <legend>Make Reservation</legend>
@@ -71,41 +120,58 @@
 
         
         <section id='cardsec'></section>
-        <div class="figures">
- <div class ="cont">
-                <div class="area" >
-                   <div class="image">
-                    <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/17/0e/e3/01/vue-du-haut.jpg?w=500&h=-1&s=1">
-                   </div>
-                </div> 
-                <div class="area" >
-                    <div class="image">
-                        <img src="https://www.visitpetra.jo/EchoBusV3.0/SystemAssets/9f388b6e-a3a9-4ce7-9a21-8267bf6d80e5.jpg">
-                    </div>
-                </div> 
-                <div class="area" >
-                    <div class="image">
-                     <img src="https://static.toiimg.com/photo/msid-59268071,width-96,height-65.cms">
-                    </div>
-                </div> 
-                <div class="area" >
-                    <div class="image">
-                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSda5aZxExUzdGQ1ZKHVxPt0YOtIK-70ZPUJQ&usqp=CAU">
-                    </div>
-                </div>   
-                 
-         <h2>Some Tips for you to explore Jordan</h2>
+        <div id="filler">        
+         <h2>Explore Jordan</h2>
   
-<ul><li>You are reminded of a civilization that once was, you can walk through the Siq and explore one of the seven wonders of the modern world, the Rose-red city of Petra.</li>
-  <li>Canyoning is the perfect way for thrill-seekers to experience the challenges and beauty of Jordan’s best and most spectacular canyons. Explore the breathtaking sandstone canyons of Wadi Mujib.</li>
-  <li>From the Lawrence of Arabia, Star wars till the Martin, be inspired by the spectacular Wadi Rum desert.</li>
-  <li>The lowest point on earth is just a few hours from your home, it does not matter whether it's summer or winter, the Dead Sea is always a good place to visit.</li>
-  <li>You have been home for a long time, and we know it was stressful, if diving is your thing, ensure you spend some time snorkeling the reefs in Aqaba.</li>
-</ul>
-</div> 
+        <ul> <li>You are reminded of a civilization that once was, you can walk through the Siq and explore one of the seven wonders of the modern world, the Rose-red city of Petra.</li>
+             <li>Canyoning is the perfect way for thrill-seekers to experience the challenges and beauty of Jordan’s best and most spectacular canyons. Explore the breathtaking sandstone canyons of Wadi Mujib.</li>
+              <li>From the Lawrence of Arabia, Star wars till the Martin, be inspired by the spectacular Wadi Rum desert.</li>
+             <li>The lowest point on earth is just a few hours from your home, it does not matter whether it's summer or winter, the Dead Sea is always a good place to visit.</li>
+              <li>You have been home for a long time, and we know it was stressful, if diving is your thing, ensure you spend some time snorkeling the reefs in Aqaba.</li>
+        </ul>
+        </div>
     </main>
     <footer>
         <script src="JS/appbn.js" style="display:none;"></script>
+        <footer class="footer-distributed">
+            <div class="footer-left">
+                <h3>JO<span>Wonders</span></h3>
+                <p class="footer-links">
+                    <a href="#" class="link-1">Home</a>
+                    <a href="#">Distiation</a>
+                    <a href="#">Book</a>
+                    <a href="#">About</a>
+                    <a href="#">Contact</a>
+                </p>
+                <p class="footer-company-name">JO Wonders © 2021</p>
+            </div>
+            <div class="footer-center">
+                <div>
+                    <i class="fa fa-map-marker"></i>
+                    <p><span>Visit us</span>Amman ,Jordan</p>
+                </div>
+                <div>
+                    <i class="fa fa-phone"></i>
+                    <p>+079654320</p>
+                </div>
+                <div>
+                    <i class="fa fa-envelope"></i>
+                    <p><a href="JOWonders@company.com">JOWonders@company.com</a></p>
+                </div>
+            </div>
+            <div class="footer-right">
+                <p class="footer-company-about">
+                    <span>About the company</span>
+                    We work togather to code to design and produce work that we are proud for that we belive in
+                </p>
+                <div class="footer-icons">
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                    <a href="#"><i class="fa fa-linkedin"></i></a>
+                    <a href="#"><i class="fa fa-github"></i></a>
+                </div>
+            </div>
+        </footer>
     </footer>
 </body>
 </html>

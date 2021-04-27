@@ -9,7 +9,7 @@ main{
   background-size: 100%;
   background-attachment: fixed;
   position: relative;
-  
+  padding-bottom: 5rem;
 }
 
 #book{
@@ -17,7 +17,7 @@ main{
   width:5.5rem; 
   border-radius: 1rem;
   font-family: 'Pacifico', cursive;
-  background-color: #ffcb91;
+  background-color: rgb(113, 160, 179);;
 }
 #book:hover{
   transform: scale(1.2);
@@ -108,7 +108,7 @@ main{
   }
   
   
-  .container {
+  .containerv {
     display: none;
       border:black;
       height: 300px;
@@ -118,7 +118,16 @@ main{
       right:4rem;
       top :3%;
   }
-.vcard:hover .container, .vcard.hover .container {
+  .vcard{
+    position: relative;
+    left:10rem;
+    }
+    .vcard:hover{
+      position: relative;
+      left:.7rem;
+    }
+    
+.vcard:hover .containerv, .vcard.hover .containerv {
     display:block;
 }
 
@@ -153,57 +162,23 @@ main{
    font-size: 18px;
    border-radius: 1rem;
    font-family: 'Pacifico', cursive;
-   background-color: rgba(82, 179, 217, .5)
-
-   ;
+   background-color: rgba(82, 179, 217, .5);
   }
   #details input{
    
   border-radius: 1rem;
   font-family: 'Pacifico', cursive;
-  background-color:rgba(82, 179, 217, .5)
-
-  ;
+  background-color:rgba(82, 179, 217, .5);
   }
   #persons{
     width: 70px;
   }
-  .container p, .container h4{
+  .containerv p, .containerv h4{
     font-family: 'Pacifico', cursive;
     font-size: 16px;
 
   }
-  .figures{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-  }
-  .cont{
-    position: relative;
-    width: 1000px; 
-    display:flex;
-    flex-wrap: wrap;
-  }
-  .cont .area{
-    position: relative;
-    width: 250px;
-    height: 300px;
-    overflow: hidden;
-    transition: 0.75s;
-  }
-  .cont .area:hover{
-  z-index: 1;
-  transform: scale(1.35);
-  box-shadow: 5px 0px 5px 0px rgb(59, 96, 216);
-  }
-  .cont .area .image img{
-    position: absolute;
-    top:0;
-    left:0;    
-    width: 100%;
-    height: 100%;
-    }
+  
     ul li {
 
       font-family: 'Pacifico', cursive;
@@ -216,8 +191,10 @@ main{
         list-style-type:none;
         text-decoration: none;
         margin-bottom: 5rem;
+        padding-bottom: 3rem;
       }
       main h2{
+        padding-top: 3rem;;
         display:block;
         margin:2rem auto;
         font-family: 'Pacifico', cursive;
@@ -233,7 +210,166 @@ main{
 #seeCard:hover{
   
   transform: scale(1.1);
+
 }
 #breakfast , #guide{
   background-color: wheat;
+}
+
+#filler{
+  border: 1px;
+  border-radius: 3rem;
+  background-color:rgba(82, 179, 217, .3) ;
+}
+
+#rating{
+  text-align: center;
+  position: relative;
+  top:3rem;
+  margin:.5rem;
+  padding:.5rem;
+  /* border: 1px;
+  background-color:rgba(82, 179, 217, .3) ; */
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.container{
+  
+  position: relative;
+  left:1rem;
+  display: block;
+  margin:0 auto;
+  width: 400px;
+  background: rgba(113, 160, 179, 0.6);
+  padding: 30px 30px;
+  border: 1px dotted rgb(113, 160, 179);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.container .post{
+  display: none;
+}
+.container .text{
+  font-size: 25px;
+  color: #666;
+  font-weight: 500;
+}
+.container .edit{
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  font-size: 16px;
+  color: #666;
+  font-weight: 500;
+  cursor: pointer;
+}
+.container .edit:hover{
+  text-decoration: underline;
+}
+.container .star-widget input{
+  display: none;
+}
+.star-widget label{
+  font-size: 40px;
+  color: #444;
+  padding: 10px;
+  float: right;
+  transition: all 0.2s ease;
+}
+.container input:not(:checked) ~ label:hover,
+.contaner input:not(:checked) ~ label:hover ~ label{
+  color: #fd4;
+}
+.container input:checked ~ label{
+  color: #fd4;
+}
+input#rate-5:checked ~ label{
+  color: #fe7;
+  text-shadow: 0 0 20px #952;
+}
+#rate-1:checked ~ form header:before{
+  content: "I just hate it :angry:";
+}
+#rate-2:checked ~ form header:before{
+  content: "I don't like it :unamused:";
+}
+#rate-3:checked ~ form header:before{
+  content: "It is awesome :smile:";
+}
+#rate-4:checked ~ form header:before{
+  content: "I just like it :sunglasses:";
+}
+#rate-5:checked ~ form header:before{
+  content: "I just love it :heart_eyes:";
+}
+.container form{
+  display: none;
+}
+input:checked ~ form{
+  display: block;
+}
+form header{
+  width: 100%;
+  font-size: 25px;
+  color: #fe7;
+  font-weight: 500;
+  margin: 5px 0 20px 0;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+form .textarea{
+  height: 100px;
+  width: 100%;
+  overflow: hidden;
+}
+form .textarea textarea{
+  height: 100%;
+  width: 100%;
+  outline: none;
+  color: #444;
+  border: 1px solid rgba(113, 160, 179);
+  background: rgba(113, 160, 179, 0.8);
+  padding: 10px;
+  font-size: 17px;
+  resize: none;
+}
+.textarea textarea:focus{
+  border-color: rgb(99, 140, 156);
+}
+form .btn{
+  height: 45px;
+  width: 100%;
+  margin: 15px 0;
+}
+form .btn button{
+  height: 100%;
+  width: 100%;
+  border: 1px solid rgb(99, 140, 156);
+  outline: none;
+  background: rgba(113, 160, 179);
+ color:#444;
+  font-size: 17px;
+  font-weight: 500;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+form .btn button:hover{
+  background: rgb(99, 140, 156);
 }
