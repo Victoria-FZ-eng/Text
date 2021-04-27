@@ -4,7 +4,7 @@
 
 main{
   
-  background-image: url('../imgbn/Desert_Sunset_Background-1166.jpg');
+  background-image: url('../imgbn/wadi-rum-desert-landscape.jpg');
   background-repeat: no-repeat;
   background-size: 100%;
   background-attachment: fixed;
@@ -17,9 +17,9 @@ main{
   width:5.5rem; 
   border-radius: 1rem;
   font-family: 'Pacifico', cursive;
-  background-color: rgb(113, 160, 179);
+  background-color: #5F9EA0;
 }
-#reserve:hover, #ok:hover, #book:hover {
+#book:hover{
   transform: scale(1.2);
 }
 
@@ -36,7 +36,7 @@ main{
   width:4rem; 
   border-radius: 1rem;
   font-family: 'Pacifico', cursive;
-  background-color: #92c2c4;
+  background-color: #5F9EA0;
 
 }
 
@@ -164,13 +164,13 @@ main{
    font-size: 18px;
    border-radius: 1rem;
    font-family: 'Pacifico', cursive;
-   background-color: rgba(82, 179, 217, .5);
+   background-color:  #5F9EA0;
   }
   #details input{
    
   border-radius: 1rem;
   font-family: 'Pacifico', cursive;
-  background-color:rgba(82, 179, 217, .5);
+  background-color: #5F9EA0;
   }
   #persons{
     width: 70px;
@@ -214,14 +214,15 @@ main{
   transform: scale(1.1);
 
 }
-#breakfast , #guide{
-  background-color: wheat;
-}
+
 
 #filler{
+  display:block;
+  margin:0 auto;
   border: 1px;
   border-radius: 3rem;
-  background-color:rgba(82, 179, 217, .3) ;
+  width:80%;
+  background-color: #5F9EA090 ;
 }
 
 #rating{
