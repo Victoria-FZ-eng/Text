@@ -25,6 +25,7 @@ main{
 
 #bookingForm {
   border: 1px;
+  border-radius: 10px;
   width:30%;
   font-family: 'Pacifico', cursive;
 }
@@ -58,7 +59,8 @@ main{
 }
 
 #confirmation{
-  border: 1px solid;
+  border: 1px solid #666;
+  border-radius: 10px;
   
   width:30%;
   font-family: 'Pacifico', cursive;
