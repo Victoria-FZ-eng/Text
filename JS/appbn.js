@@ -1,21 +1,13 @@
 'use strict';
-let type =['Hiking', 'Exploring', 'Relaxing'];
-let hikingType=['Valley Of The Moon /Rum', 'Waleh Valley', 'Salaytah Valley', 'Aya Valley'];
-let relaxing=['Dead Sea', 'Maeen Hot Springs', 'Aqaba', 'Ajloun Forest'];
-let exploring = ['Petra', 'Down Town', 'Salt', 'Jerash', 'Amman Citadel', 'Karak Castle', 'Ajoun Castle'];
-
-let allDestination =['Ajloun Forest', 'Ajloun Castle', 'Amman Citadel', 'Aqaba', 'Aya Valley', 'Dead Sea', 'Down Town', 'Jerash', 'Karak Castle', 'Maeein Hot Springs', 'Perta', 'Valley Of The Moon /Rum', 'Salaytah Valley', 'Salt', 'Waleh Valley'];
-
-let allDesImg = ['img/ajlonRelax.jpg', 'img/ajlounCastle.jpg', 'img/ammanCitadle.jpg', 'img/aqaba.jpg','img/aya.jpg','img/deadsea.jpg','img/downTown.jpg', 'img/jerash.jpg','img/karakCastle.jpg','img/mainHotSprings.jpg','img/petra.jpg','img/rum.jpg','img/salayta.jpg','img/salt.jpg','img/waleh.jpg'];
-
-
-
+let allDestination =['Ajloun Forest', 'Ajloun Castle', 'Amman Citadel', 'Aqaba', 'Aya Valley', 'Dead Sea', 'Down Town', 'Jerash', 'Karak Castle', 'Maeen Hot Springs', 'Petra', 'Valley Of The Moon /Rum', 'Salaytah Valley', 'Salt', 'Waleh Valley'];
+let allDesImg = ['imgbn/ajlonRelax.jpg', 'imgbn/ajlounCastle.jpg', 'imgbn/ammanCitadle.jpg', 'imgbn/aqaba.jpg','imgbn/aya.jpg','imgbn/deadsea.jpg','imgbn/downTown.jpg', 'imgbn/jerash.jpg','imgbn/karakCastle.jpg','imgbn/mainHotSprings.jpg','imgbn/petra.jpg','imgbn/rum.jpg','imgbn/salayta.jpg','imgbn/salt.jpg','imgbn/waleh.jpg'];
 let persons;
 let tguide;
 let breakfast;
 let activity;
 let site;
-
+let message;
+let renderAct;
 let baseprice=0;
 let totalprice=0;
 let pricetguide=0;
@@ -23,6 +15,7 @@ let pricebreakfast=0;
 let hikingbaseprice=20;
 let Relaxingbaseprice=15;
 let Exploringbaseprice=10;
+let originalprice=0;
 document.getElementById('siteChosen');
 const checkBox = document.getElementById('breakfast');
 site=document.getElementById('siteChosen');
@@ -32,6 +25,7 @@ console.log(checkBox2);
 const form=document.getElementById('details');
 form.addEventListener('submit',getselect);
 console.log(form);
+
 function getselect(event){
   event.preventDefault();
   console.log(event);
@@ -42,6 +36,8 @@ function getselect(event){
   console.log(breakfast);
   console.log(tguide);
   activity=site.value;
+  renderAct=site.value;
+  console.log(renderAct);
   console.log(activity);
   switch(activity){
   case 'Valley Of The Moon /Rum':
@@ -52,7 +48,7 @@ function getselect(event){
     break;
   case 'Dead Sea':
   case 'Maeen Hot Springs':
-  case 'Aquaba':
+  case 'Aqaba':
   case 'Ajloun Forest':
     activity='Relaxing';
     break;
@@ -62,14 +58,15 @@ function getselect(event){
   case 'Jerash':
   case 'Amman Citadel':
   case 'Karak Castle':
-  case 'Ajoun Castle':
+  case 'Ajloun Castle':
     activity='Exploring';
     console.log('f is working');
     break;
   }
-  console.log(site);
+
   let adventure=new Booking(activity,persons,breakfast,tguide);
   adventure.caltotal();
+  adventure.render();
 }
 function savToLs(){
   localStorage.setItem('requestconfirmed',Booking.request);
@@ -104,6 +101,7 @@ function Booking (activity,persons,breakfast,tguide){
   console.log(this);
 }
 Booking.request=[];
+let adventure=new Booking(activity,false,false,0);
 Booking.prototype.caltotal = function()
 {
   if(this.activity==='Exploring')
@@ -126,29 +124,20 @@ Booking.prototype.caltotal = function()
   if(this.breakfast===true){
     pricebreakfast=3*this.persons;
   }
+  originalprice=baseprice+pricebreakfast+pricetguide;
   totalprice=baseprice+pricebreakfast+pricetguide;
   console.log(totalprice);
-  if(randomValue(1,3)===1)
-  { totalprice=totalprice*.85;
-    console.log('Its the 100 anniversry and we have special offer for you of 15% discount ',totalprice);
-  }
-  else if(randomValue(2,3)===2)
-  { totalprice=totalprice*.80;
-    console.log('Its the 100 anniversry and we have special offer for you of 20% discount ',totalprice);
-  }
-  else {
-    totalprice=totalprice*.75;
-    console.log('Its the 100 anniversry and we have special offer for you of 25% discount ',totalprice);
-  }
+  
 };
-
-
-
-
-
-
+// console.log(site.value);
+Booking.prototype.render=function(){
 let cardcont = document.getElementById('cardsec');
-for (let i=0 ; i<allDestination.length; i++){
+for (let i=0 ; i<allDestination.length; i++)
+{
+  console.log(site.value); 
+  if(site.value===allDestination[i]){
+  console.log('render f',renderAct);
+  console.log(allDestination[i]);
   let div = document.createElement('div');
   div.setAttribute('class', 'vcard');
   cardcont.appendChild(div);
@@ -161,31 +150,46 @@ for (let i=0 ; i<allDestination.length; i++){
   let h = document.createElement('h4');
   divcont.appendChild(h);
   h.textContent = allDestination[i];
-
-  let now = document.createElement('button');
+  let p = document.createElement('p');
+  divcont.appendChild(p);
+  console.log(breakfast);
+  console.log(tguide);
+  if(randomValue(1,3)===1)
+  { totalprice=Math.floor(totalprice*.85);
+    message='Its the 100 anniversry of Jordan and JOWONDERS have special offer of 15% discount ';
+  }
+  else if(randomValue(2,3)===2)
+  { totalprice=Math.floor(totalprice*.80);
+    message='Its the 100 anniversry of Jordan and JOWONDERS have special offer of 20% discount ';
+  }
+  else {
+    totalprice=Math.floor(totalprice*.75);
+    message='Its the 100 anniversry of Jordan and JOWONDERS have special offer of 25% discount '
+  }
+  let text1='';
+  let text2='';
+  if(breakfast===true){text1=',Breakfast Included'}
+  else{text1=''}
+  console.log(tguide);
+  if (tguide ===true){text2=' and with a Certified Tour Guide'}
+  else{text2=''}
+  console.log(persons);
+  if (persons ==='1'){p.textContent=`Your are booking ${persons} ticket for ${activity} trip to ${renderAct} ${text1} ${text2}. Your price is ${originalprice}, but ${message}    Your final offer is ${totalprice}`;
+}
+  else{ p.textContent=`Your are booking ${persons} tickets for ${activity} trip to ${renderAct} ${text1} ${text2}. Your price is ${originalprice}, but ${message}    Your final offer is ${totalprice}`;
+}
+  
+   let now = document.createElement('button');
   now.setAttribute('id','book');
   divcont.appendChild(now);
   now.textContent='Book Now';
+  now.addEventListener('click',booking)
+ }
 }
-
-
-
-
-
-
-
-let book = document.getElementById('book');
-book.addEventListener('click',booking);
-
-// document.getElementById('ok').addEventListener('click', back);
-
-function booking(event){
-//   event.perventDefault();
+};
+function booking(){
   document.getElementById('bookingForm').style.display ='block';
-  return event;
-
-}
-
+ }
 let reserve = document.getElementById('bookingForm');
 reserve.addEventListener('submit',savtoLs);
 
@@ -198,39 +202,12 @@ function savtoLs(event){
 
   document.getElementById('confirmation').style.display='block';
 
-document.getElementById('bookingForm').style.display='none';
-document.getElementById('confirmation').style.display='block';
-let ok = document.getElementById('ok');
-ok.addEventListener('click', back);
-
-  return event;
+  let ok = document.getElementById('ok');
+  ok.addEventListener('click', back);
+  function back(event){
+    event.preventDefault();
+   document.getElementById('confirmation').style.display='none';
+   
+   }
+  
 }
-
-
-
-
-
-function back(event){
-document.getElementById('book').addEventListener('click',booking);
-document.getElementById('confirmation').style.display='none';
-return event;
-}
-
-
-document.getElementById('details').addEventListener('submit', parg);
-
-function parg(event){
-  let conta = document.getElementsByClassName('container')[0];
-  let p = document.createElement('p');
-  conta.appendChild(p);
-  p.textContent=`Your are booking ${persons} tickets for a ${activity} trip to ${site} . Breakfast including : ${breakfast}. Tour guide including ${tguide}.      Price = ${totalprice}`;
-  return event;
-}
-
-
-
-
-
-
-
-
