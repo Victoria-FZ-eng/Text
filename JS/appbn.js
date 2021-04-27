@@ -223,8 +223,8 @@ Booking.prototype.render=function(){
       h.textContent = allDestination[i];
       let p = document.createElement('p');
       divcont.appendChild(p);
-      console.log(breakfast);
-      console.log(tguide);
+      // console.log(breakfast);
+      // console.log(tguide);
       if(randomValue(1,3)===1)
       { totalprice=Math.floor(totalprice*.85);
         message='Its the 100 anniversry of Jordan and JOWONDERS have special offer of 15% discount ';
@@ -278,7 +278,6 @@ function savtoLs(event){
   function back(event){
     event.preventDefault();
     document.getElementById('confirmation').style.display='none';
-    // document.getElementById('book').textContent='BOOKED';
 
   }
 
