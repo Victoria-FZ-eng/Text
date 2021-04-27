@@ -17,7 +17,7 @@ main{
   width:5.5rem; 
   border-radius: 1rem;
   font-family: 'Pacifico', cursive;
-  background-color: rgb(113, 160, 179);;
+  background-color: rgb(113, 160, 179);
 }
 #book:hover{
   transform: scale(1.2);
@@ -35,7 +35,7 @@ main{
   width:4rem; 
   border-radius: 1rem;
   font-family: 'Pacifico', cursive;
-  background-color: #ffcb91;
+  background-color: rgb(82, 121, 136);;
 
 }
 
@@ -231,6 +231,11 @@ main{
   /* border: 1px;
   background-color:rgba(82, 179, 217, .3) ; */
 
+}
+#arrow{
+  display:block;
+  margin:0 auto;
+  height: 100px;
 }
 
 
